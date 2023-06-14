@@ -1,0 +1,45 @@
+<html>
+
+<head>
+
+    <style>
+        .go {
+            background-color: green;
+            color: white;
+        }
+
+        .stop {
+            background-color: red;
+            color: white;
+        }
+    </style>
+
+    <script>
+
+        let nIntervId;
+        function changeColor() {
+
+            if (!nIntervId) {
+                nIntervId = setInterval(flashText, 1000);
+            }
+        }
+
+        function flashText() {
+            const oElem = document.getElementById("my_box");
+            oElem.className = oElem.className === "go" ? "stop" : "go";
+        }
+
+        document.addEventListener("DOMContentLoaded", changeColor);
+
+    </script>
+
+</head>
+
+<body>
+
+
+    <button id="my_box">Start</button>
+
+
+
+</html>
